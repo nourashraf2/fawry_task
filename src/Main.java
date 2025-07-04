@@ -87,6 +87,7 @@ public class Main {
         for (Product product : cartProducts) {
             double price = Main.Menu.get(product.getName()).getPrice();
             double finalPrice = price * product.getQuantity();
+            Main.Menu.get(product.getName()).setQuantity(Main.Menu.get(product.getName()).getQuantity()-product.getQuantity());
             totalPrice += finalPrice;
             receipt.append(product.getQuantity()).append("x   ")
                     .append(product.getName()).append("    ")
