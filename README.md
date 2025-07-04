@@ -9,8 +9,8 @@ This document outlines test cases for validating the `Cart.addProduct(String nam
 ```java
 Customer customer1 = new Customer("Nour", 1500.0);
 Cart cart1 = new Cart();
-cart1.addProduct("Cheese", 2, Menu.get("Cheese"));
-cart1.addProduct("Scratch Card", 3, Menu.get("Scratch Card"));
+cart1.addProduct("Cheese", 2);
+cart1.addProduct("Scratch Card", 3);
 Main.checkout(customer1, cart1);
 ```
 
@@ -26,7 +26,7 @@ Main.checkout(customer1, cart1);
 ```java
 Customer customer3 = new Customer("Ahmed", 300.0);
 Cart cart3 = new Cart();
-cart3.addProduct("Biscuits", 1, Menu.get("Biscuits"));
+cart3.addProduct("Biscuits", 1);
 Main.checkout(customer3, cart3);
 ```
 
@@ -53,8 +53,8 @@ Main.checkout(customer2, cart2);
 ```java
 Customer customer4 = new Customer("Sara", 50.0);
 Cart cart4 = new Cart();
-cart4.addProduct("Cheese", 1, Menu.get("Cheese"));
-cart4.addProduct("TV", 1, Menu.get("TV"));
+cart4.addProduct("Cheese", 1);
+cart4.addProduct("TV", 1);
 Main.checkout(customer4, cart4);
 ```
 
@@ -68,7 +68,7 @@ Main.checkout(customer4, cart4);
 ```java
 Customer customer5 = new Customer("Omar", 100000.0);
 Cart cart5 = new Cart();
-cart5.addProduct("Laptop", 100, Menu.get("Laptop")); // Only 10 in stock
+cart5.addProduct("Laptop", 100); // Only 10 in stock
 Main.checkout(customer5, cart5);
 ```
 
@@ -82,7 +82,7 @@ Main.checkout(customer5, cart5);
 ```java
 Customer customer6 = new Customer("Nadine", 25000.0);
 Cart cart6 = new Cart();
-cart6.addProduct("Laptop", 1, Menu.get("Laptop"));
+cart6.addProduct("Laptop", 1);
 Main.checkout(customer6, cart6);
 ```
 
