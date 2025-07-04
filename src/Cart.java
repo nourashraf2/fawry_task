@@ -7,18 +7,22 @@ public class Cart {
     public Cart() {
     }
 
-    public void addProduct(String name, int quantity,Product menuItem){
-        if(menuItem.getExpirable()!=null){
-            if (menuItem.getExpirable().getExpiryDate().isBefore(LocalDate.now()) ||
-                    menuItem.getExpirable().getExpiryDate().isEqual(LocalDate.now())) {
-                throw new Error("You are trying to add an expired product");
+    public void addProduct(String name, int quantity){
+        Product product=Main.Menu.get(name);
+        if(product instanceof Expirable ){
+            Expirable expirable = (Expirable) Main.Menu.get(name);
+            if(expirable.getExpiryDate().isBefore(LocalDate.now())  || expirable.getExpiryDate().equals(LocalDate.now())){
+                throw new Error("Product is Expired");
             }
         }
-        if(menuItem.getQuantity()<quantity){
-            throw new Error("qunatity ordered is more than the available stock");
+        if(product instanceof ShippableAndExpirable ){
+            ShippableAndExpirable shippableAndExpirable = (ShippableAndExpirable) Main.Menu.get(name);
+            if(shippableAndExpirable.getExpiryDate().isBefore(LocalDate.now())  || shippableAndExpirable.getExpiryDate().equals(LocalDate.now())){
+                throw new Error("Product is Expired");
+            }
         }
-        if(menuItem.getQuantity()==0){
-            throw new Error("out of stock");
+        if(product.getQuantity()<quantity){
+            throw new Error("un available amount");
         }
 
         products.add(new Product(name,quantity));

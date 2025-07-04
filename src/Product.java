@@ -2,15 +2,12 @@ public class Product {
     private String name;
     private Double price;
     private int quantity;
-    private Expirable expirable ;
-    private Shippable shippable;
 
-    public Product(String name, Double price, int quantity, Expirable expirable, Shippable shippable) {
+    public Product(String name, Double price, int quantity) {
         this.name = name;
         this.price = price;
         this.quantity = quantity;
-        this.expirable = expirable;
-        this.shippable = shippable;
+
     }
 
 
@@ -44,19 +41,5 @@ public class Product {
         this.quantity = quantity;
     }
 
-    public Expirable getExpirable() {
-        return expirable;
-    }
 
-    public void setExpirable(Expirable expirable) {
-        this.expirable = expirable;
-    }
-
-    public Shippable getShippable() {
-        return shippable;
-    }
-
-    public void setShippable(Shippable shippable) {
-        this.shippable = shippable;
-    }
 }

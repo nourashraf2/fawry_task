@@ -1,7 +1,9 @@
-public class Shippable {
+public class Shippable extends Product {
     private Double weight;
 
-    public Shippable(Double weight) {
+
+    public Shippable(String name, Double price, int quantity, Double weight) {
+        super(name, price, quantity);
         this.weight = weight;
     }
 

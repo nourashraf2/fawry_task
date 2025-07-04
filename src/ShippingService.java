@@ -9,7 +9,15 @@ public class ShippingService {
 
         shippingReceipt.append("** Shipping Notice **\n");
         for (Product product : shippableProducts) {
-            double weight = Main.Menu.get(product.getName()).getShippable().getWeight();
+            double weight=1.1;
+            if(product instanceof Shippable){
+                weight =((Shippable) Main.Menu.get(product.getName())).getWeight();
+            }else{
+                if(product instanceof ShippableAndExpirable){
+                    weight =((ShippableAndExpirable) Main.Menu.get(product.getName())).getWeight();
+                }
+            }
+
             double finalWeight = weight * product.getQuantity();
             totalWeight += finalWeight;
             shippingReceipt.append(product.getQuantity())

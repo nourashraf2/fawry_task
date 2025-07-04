@@ -1,9 +1,10 @@
 import java.time.LocalDate;
 
-public class Expirable {
+public class Expirable extends Product {
     private LocalDate expiryDate;
 
-    public Expirable(LocalDate expiryDate) {
+    public Expirable(String name, Double price, int quantity, LocalDate expiryDate) {
+        super(name, price, quantity);
         this.expiryDate = expiryDate;
     }
 
